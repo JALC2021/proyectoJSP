@@ -1,0 +1,64 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+    <package name="productoActions" namespace="/actions" extends="struts-default">       
+        
+        <action name="anadirProducto" class="actions.ListadoProducto" method="aniadirProducto">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2097152</param>
+                <param name="allowedTypes">
+                    image/png,image/gif,image/jpeg,image/pjpeg
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">/vistas/home.jsp</result>
+            <result name="input">/vistas/insertarProducto.jsp</result>
+        </action>
+        
+        <action name="listadoSubcategoriaProducto" class="actions.ListadoProducto" method="consultarProductoSegunSubCategoria">
+            <result name="success">/vistas/mostrarProductoSubCategoria.jsp</result>
+        </action>
+        
+        <action name="MenuAgregarProducto" class="actions.ListadoProducto" method="mostrarSubCategoriasProductos">
+            <result name="success">/vistas/insertarProducto.jsp</result>
+        </action>
+        
+        <action name ="mostrarProductoPorID" class="actions.ListadoProducto" method="mostrarProductoPorID">
+            <result  name="success">/vistas/mostrarProductoDetallado.jsp</result>
+        </action>
+        
+        <action name="mostrarProductos" class="actions.ListadoProducto"  method="consultaProductosIdUsuario">
+            <result name="success">/vistas/mostrarProductoUsuario.jsp</result>
+        </action>
+        
+        <action name="actualizarProducto" class="actions.ListadoProducto" method="mostrarProductoPorID">
+            <result name="success">/vistas/actualizarProducto.jsp</result>
+            <result name="error">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="ocultarProducto" class="actions.ListadoProducto" method="consultaProductoPorId">
+            <result name="success">/vistas/ocultarProducto.jsp</result>
+            <result name="error">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="ocultarCategoriaPorIds" class="actions.ListadoProducto" method="ocultarProductoPorIds">
+            <result name="success">/vistas/home.jsp</result>
+        </action>
+        
+        <action name="modificarProducto" class="actions.ListadoProducto" method="modificarProducto">
+            <result name="success">/vistas/mostrarProductoUsuario.jsp</result>
+            <result name="input">/vistas/actualizarProducto.jsp</result>
+            <result name="error">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="productoDestacado" class="actions.ListadoProducto" method="productoDestacadoPorId">
+            <result name="success">/vistas/home.jsp</result>
+        </action>
+        
+        
+        
+    </package>
+</struts>

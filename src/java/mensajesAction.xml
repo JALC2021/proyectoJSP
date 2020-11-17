@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+    <package name="mensajesAction" namespace="/actions" extends="struts-default">   
+            
+        <action name="misMensajes" class="actions.mensajesAction" >
+            <result name="success">/vistas/misMensajes.jsp</result>
+        </action>
+               
+        <action name="anadirMensaje" class="actions.mensajesAction" method="añadirMensaje">
+            <result name="success">/vistas/misMensajes.jsp</result>           
+        </action> 
+        
+        <action name="responderMensaje" class="actions.mensajesAction" method="responderMensaje">
+            <result name="success">/vistas/misMensajes.jsp</result>           
+        </action> 
+        
+        <action name="mensajeUnico" class="actions.mensajesAction" method="buscarMensajeID">
+            <result name="success">/vistas/mensaje.jsp</result>           
+        </action> 
+              
+    </package>
+</struts>

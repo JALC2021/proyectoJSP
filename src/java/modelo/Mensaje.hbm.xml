@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-may-2016 13:02:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Mensaje" table="mensaje" catalog="compraventa" optimistic-lock="version">
+        <id name="idMensaje" type="java.lang.Integer">
+            <column name="idMensaje" />
+            <generator class="identity" />
+        </id>
+        <property name="idUsuarioEmisor" type="int">
+            <column name="idUsuarioEmisor" not-null="true" />
+        </property>
+        <property name="idUsuarioReceptor" type="int">
+            <column name="idUsuarioReceptor" not-null="true" />
+        </property>
+        <property name="idProducto" type="int">
+            <column name="idProducto" not-null="true" />
+        </property>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="250" not-null="true" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="fecha" length="10" not-null="true" />
+        </property>
+        <property name="hora" type="string">
+            <column name="hora" length="5" not-null="true" />
+        </property>
+        <property name="leido" type="int">
+            <column name="leido" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

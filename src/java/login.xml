@@ -1,0 +1,33 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+        <package name="login" namespace="/actions" extends="struts-default">       
+        <action name="login">
+            <result>/vistas/login.jsp</result>
+        </action>      
+        <action name="loginCheck" class="actions.LoginCheckAnnotations">
+            <result name="success">/vistas/home.jsp</result>
+            <result name="error">/vistas/login.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
+        
+        <action name="registroNuevo" class="actions.LoginRegister">
+            <result name="success">/vistas/registro.jsp</result>          
+        </action>
+        
+        <action name="addUsuario" class="actions.LoginAddUser">
+            <result name="success">/vistas/login.jsp</result>
+            <result name="error">/vistas/registro.jsp</result>
+            <result name="input">/vistas/registro.jsp</result>
+        </action>
+
+        <action name="desconectar" class="actions.LoginCheckAnnotations" method="logout">
+            <result name="success">/vistas/desconectar.jsp</result>
+            <result name="input">/vistas/desconectar.jsp</result>
+        </action>
+        
+    </package>
+</struts>

@@ -1,0 +1,25 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+    <package name="UsuarioAction" namespace="/actions" extends="struts-default">       
+        <action name="UsuarioAction" class="actions.UsuarioAction" method="consultarTodosUsuarios">
+            <result name="success">/vistas/gestionUsuarios.jsp</result>
+            <result name="error">/login/login.jsp</result>
+        </action>
+          
+        <action name="ConsultarUsuarioAction" class="actions.UsuarioAction" method="consultarUsuarioID" >
+            <result name="success">/vistas/actualizarUsuario.jsp</result>            
+        </action>
+        
+        <action name="ActualizarUsuarioAction" class="actions.UsuarioAction" method="actualizarUsuarioId" >
+            <result name="success">/vistas/gestionUsuarios.jsp</result>            
+        </action>
+        
+        <action name="OcultarUsuarioAction" class="actions.UsuarioAction" method="ocultarUsuarioPorIds">
+            <result name="success">/vistas/gestionUsuarios.jsp</result>
+        </action>
+    </package>
+</struts>

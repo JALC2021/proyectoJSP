@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-may-2016 13:02:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Producto" table="producto" catalog="compraventa" optimistic-lock="version">
+        <id name="idProducto" type="java.lang.Integer">
+            <column name="idProducto" />
+            <generator class="identity" />
+        </id>
+        <property name="idSubCategoria" type="int">
+            <column name="idSubCategoria" not-null="true" />
+        </property>
+        <property name="titulo" type="string">
+            <column name="titulo" length="150" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="250" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" length="250" not-null="true" />
+        </property>
+        <property name="precio" type="int">
+            <column name="precio" not-null="true" />
+        </property>
+        <property name="vendido" type="int">
+            <column name="vendido" not-null="true" />
+        </property>
+        <property name="idUsuario" type="int">
+            <column name="idUsuario" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="150" not-null="true" />
+        </property>
+        <property name="activo" type="int">
+            <column name="activo" not-null="true" />
+        </property>
+        <property name="fechaVendido" type="date">
+            <column name="fechaVendido" length="10" not-null="false" />
+        </property>
+        <property name="fechaAlta" type="date">
+            <column name="fechaAlta" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

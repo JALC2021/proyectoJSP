@@ -1,0 +1,49 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+    <package name="listadoCategoria" namespace="/actions" extends="struts-default">
+        
+        <action name="listadoCategoriaTodosMenu" class="actions.listadoCategoriaAction"  method="consultaCategoriasTodas">
+            <result name="success">/vistas/inicio.jsp</result>
+            <result name="error">/vistas/login.jsp</result>
+        </action>
+        
+        <action name="listadoCategoriaTodos" class="actions.listadoCategoriaAction"  method="consultaCategoriasTodas">
+            <result name="success">/vistas/insertarSubCategoria.jsp</result>
+        </action>
+        
+        <action name="listadoCategorias" class="actions.listadoCategoriaAction"  method="consultaCategoriasTodas">
+            <result name="success">/vistas/mostrarCategoria.jsp</result>
+        </action>
+        
+        <action name="eliminarCategoria" class="actions.listadoCategoriaAction" method="eliminarCategoria">
+            <result name="success">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="anadirCategoria" class="actions.listadoCategoriaAction" method="anadirCategoria">
+            <result name="success">/vistas/mostrarCategoria.jsp</result>
+        </action>
+        
+        <action name="actualizarCategoria" class="actions.listadoCategoriaAction" method="consultaCategoriaPorId">
+            <result name="success">/vistas/home.jsp</result>
+            <result name="error">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="actualizarCategoriaPorId" class="actions.listadoCategoriaAction" method="actualizarCategoriaPorId">
+            <result name="success">/vistas/inicio.jsp</result>
+        </action>
+        
+        <action name="ocultarCategoria" class="actions.listadoCategoriaAction" method="ocultarCategoriaPorIds">
+            <result name="success">/vistas/mostrarCategoria.jsp</result>
+        </action>
+        
+        <action name="ocultarCategoriaPorIds" class="actions.listadoCategoriaAction" method="ocultarCategoriaPorIds">
+            <result name="success">/vistas/mostrarCategoria.jsp</result>
+        </action>
+    </package>
+    
+</struts>

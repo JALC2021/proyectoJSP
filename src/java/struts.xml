@@ -1,0 +1,24 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="listadoCategoria.xml" />
+    <include file="listadoSubCategoria.xml" />
+    <include file="login.xml"/>
+    <include file="productoActions.xml"/>
+    <include file="listadoUsuarios.xml"/>
+    <include file="mensajesAction.xml"/>
+    <constant name="struts.devMode" value="true" />
+    <!-- <constant name="struts.defModel" value="struts" /> -->
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="" >
+            <result type="chain">
+                <param name="actionName">default</param>
+                <param name="namespace">/actions</param>
+            </result>
+            
+        </action>
+    </package>
+</struts>
